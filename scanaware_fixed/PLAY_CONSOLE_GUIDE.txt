@@ -1,0 +1,43 @@
+Google Play Console Upload Guide — ScanAware (commun.scanaware)
+
+1) Create a Google Play Developer account (one-time $25 fee) at: https://play.google.com/console
+
+2) Create a new application:
+   - Title: ScanAware — Ingredient & Safety Scanner
+   - Default language: English (United States)
+
+3) Prepare store listing:
+   - Short description: Scan barcodes to see ingredient breakdowns, toxicity signals, and origin info — privacy-first.
+   - Full description: ScanAware helps you understand the products you buy. Scan barcodes or enter them manually to see ingredient breakdowns, quick toxicity heuristics, sustainability scores, and origin/manufacturer hints. We prioritize privacy: no personal data is collected and all local data is stored on-device and encrypted.
+   - Promo text: Know what's inside — scan, learn, and shop safer.
+
+4) Graphics and assets:
+   - App icon (512x512 PNG)
+   - Feature graphic (1024x500 PNG)
+   - Screenshots (minimum 2 phone screenshots, recommended 6)
+   - Provide a 1024x500 feature graphic (we generated placeholder at assets/images/feature_graphic.png)
+
+   Replace placeholder screenshots with real device screenshots before publishing.
+
+5) Content rating:
+   - Complete the questionnaire (likely 'Everyone' or 'Everyone 10+' depending on regional rules).
+
+6) Data Safety section:
+   - Use the DATA_SAFETY_DRAFT.json as your answers. Indicate you do NOT collect personal user data and store local cache only.
+
+7) Privacy policy:
+   - Upload the privacy_policy.html URL or host the privacy policy online and supply the URL in the Play Console.
+
+8) App releases:
+   - Go to Release > Production > Create new release
+   - Upload the generated app-release.aab
+   - Provide release notes (use 'what_s_new' text)
+
+9) Final checks & publish:
+   - Review pre-launch reports, target countries, pricing, and content.
+   - Hit 'Start rollout to production' when ready.
+
+Notes:
+- If you use external APIs at scale, consider routing via an opt-in backend to avoid rate limits and keep API keys secure.
+- Keep your keystore safe; losing it prevents app updates.
+- Replace placeholder assets/screenshots with your polished screenshots and marketing copy before launch.

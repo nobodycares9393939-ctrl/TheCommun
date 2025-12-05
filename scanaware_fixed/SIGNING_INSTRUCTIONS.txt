@@ -1,0 +1,38 @@
+Signing configuration & release build instructions (ScanAware)
+
+1) Create a keystore locally (run on your machine):
+
+keytool -genkey -v -keystore ~/scanaware.keystore -alias scanawarekey -keyalg RSA -keysize 2048 -validity 10000
+
+2) Move the keystore to a safe location and note the full path.
+
+3) Put your passwords and path into android/key.properties (do NOT commit this file to source control):
+
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=scanawarekey
+storeFile=/full/path/to/scanaware.keystore
+
+
+4) Ensure your android/app/build.gradle has a signingConfigs block reading key.properties. Example:
+
+signingConfigs {
+    release {
+        if (project.hasProperty('storeFile')) {
+            storeFile file('../' + project.property('storeFile'))
+            storePassword project.property('storePassword')
+            keyAlias project.property('keyAlias')
+            keyPassword project.property('keyPassword')
+        }
+    }
+}
+
+5) Build signed app bundle (after adding key.properties):
+
+flutter build appbundle --release
+
+Output: build/app/outputs/bundle/release/app-release.aab
+
+6) Upload the .aab to Google Play Console.
+
+Security note: Keep the keystore and passwords private. Losing the keystore prevents you from releasing updates with the same app ID.

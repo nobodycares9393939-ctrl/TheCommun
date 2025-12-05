@@ -1,0 +1,7 @@
+{
+  "title": "ScanAware \u2014 Ingredient & Safety Scanner",
+  "short_description": "Scan barcodes to see ingredient breakdowns, toxicity signals, and origin info \u2014 privacy-first.",
+  "full_description": "ScanAware helps you understand the products you buy. Scan barcodes or enter them manually to see ingredient breakdowns, quick toxicity heuristics, sustainability scores, and origin/manufacturer hints. We prioritize privacy: no personal data is collected and all local data is stored on-device and encrypted.",
+  "promo_text": "Know what's inside \u2014 scan, learn, and shop safer.",
+  "what_s_new": "v1.0.1: Play Store launch \u2014 improved toxicity heuristics, sustainability scoring, and privacy-first defaults."
+}
