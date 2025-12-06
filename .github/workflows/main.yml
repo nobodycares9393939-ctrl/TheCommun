@@ -12,21 +12,28 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4   # UPDATE
+        uses: actions/checkout@v4
+
+      - name: Set working directory
+        run: echo "PROJECT_DIR=ScanAware_full_project" >> $GITHUB_ENV
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.2'
+          flutter-version: "3.22.2"
 
       - name: Flutter pub get
-        run: flutter pub get
+        run: |
+          cd $PROJECT_DIR
+          flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: |
+          cd $PROJECT_DIR
+          flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4   # UPDATE REQUIRED
+        uses: actions/upload-artifact@v4
         with:
           name: ScanAware-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: ScanAware_full_project/build/app/outputs/flutter-apk/app-release.apk
