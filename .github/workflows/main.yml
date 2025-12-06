@@ -18,19 +18,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Set working directory
+      run: echo "WORKDIR=$(pwd)/ScanAware_full_project" >> $GITHUB_ENV
+
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
         channel: stable
 
     - name: Install dependencies
-      run: flutter pub get
+      run: |
+        cd $WORKDIR
+        flutter pub get
 
     - name: Build APK
-      run: flutter build apk --release
+      run: |
+        cd $WORKDIR
+        flutter build apk --release
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: ScanAware-APK
-        path: build/app/outputs/flutter-apk/app-release.apk
+        path: ScanAware_full_project/build/app/outputs/flutter-apk/app-release.apk
+
