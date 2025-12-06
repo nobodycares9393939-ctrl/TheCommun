@@ -2,34 +2,31 @@ name: Build ScanAware APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      # Install Flutter
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable
 
-      # Install dependencies
-      - name: Install Flutter packages
-        run: flutter pub get
+    - name: Install Flutter packages
+      run: flutter pub get
 
-      # Build the release APK
-      - name: Build release APK
-        run: flutter build apk --release
+    - name: Build release APK
+      run: flutter build apk --release
 
-      # Upload built release APK
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: scanaware-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ScanAware-APK
+        path: build/app/outputs/flutter-apk/app-release.apk
