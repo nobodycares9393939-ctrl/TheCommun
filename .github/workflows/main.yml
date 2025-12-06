@@ -19,8 +19,19 @@ jobs:
         with:
           flutter-version: '3.22.2'
 
+      - name: Locate project folder
+        run: pwd && ls -al
+
       - name: Flutter pub get
+        working-directory: ${{ github.workspace }}
         run: flutter pub get
 
       - name: Build APK
+        working-directory: ${{ github.workspace }}
         run: flutter build apk --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: ScanAware-release
+          path: build/app/outputs/flutter-apk/app-release.apk
