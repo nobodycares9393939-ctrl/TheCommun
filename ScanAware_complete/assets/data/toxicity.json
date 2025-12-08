@@ -1,0 +1,17 @@
+{
+  "talc": {
+    "risk": 80,
+    "level": "High",
+    "notes": "Carcinogen concerns if contaminated"
+  },
+  "parabens": {
+    "risk": 60,
+    "level": "Moderate",
+    "notes": "Endocrine disruptor"
+  },
+  "fragrance": {
+    "risk": 40,
+    "level": "Low",
+    "notes": "Allergen for some users"
+  }
+}

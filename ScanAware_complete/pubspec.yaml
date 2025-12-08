@@ -1,0 +1,46 @@
+name: scanaware
+description: ScanAware - barcode scanner with toxicity scoring (scaffold)
+publish_to: "none"
+version: 1.0.1+1
+
+environment:
+  sdk: ">=3.18.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  camera: ^0.10.5+9
+  google_mlkit_barcode_scanning: ^0.12.0
+  permission_handler: ^11.2.0
+  provider: ^6.1.5
+  http: ^1.2.0
+  firebase_core: ^2.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/splash.png
+  android_12:
+    image: assets/images/splash.png
+    icon_background_color: "#ffffff"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/products.json
+    - assets/data/toxicity.json
+    - assets/icons/icon.png
+    - assets/images/splash.png

@@ -1,0 +1,20 @@
+{
+  "0123456789012": {
+    "name": "Test Shampoo",
+    "ingredients": [
+      "water",
+      "talc",
+      "fragrance"
+    ],
+    "brand": "ScanAware Labs"
+  },
+  "1234567890123": {
+    "name": "Sample Soap",
+    "ingredients": [
+      "water",
+      "sodium laureth sulfate",
+      "parabens"
+    ],
+    "brand": "CleanCo"
+  }
+}
